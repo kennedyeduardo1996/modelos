@@ -1,0 +1,131 @@
+<html>
+<head>
+	<title></title>
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+/* arrumando o menu*/
+	.menu{
+		width: 100%;
+		height: 50px;
+		background-color: #222;
+
+	}
+	.menu ul{
+		list-style: none;
+		position: relative;
+	}
+	.menu ul li{
+		width: 150px;
+		float: left;
+	}
+	.menu a{
+		padding: 15px;
+		display: block;
+		text-decoration: none;
+		text-align: center;
+		background-color: #222;
+		color: #fff;
+	}
+	.menu ul ul{
+		position: absolute;
+		display: none;
+	}
+	.menu ul li:hover ul{
+		display: block;
+	}
+	
+	.menu a:hover{
+		background-color: #f4f4f4;
+		color: #555;
+	}
+	.menu ul ul li{
+		float: none;
+		border: 1px solid #ccc;
+	}
+	/*arrumando o botão mobile*/
+	label[for="bt_menu"]{
+		padding: 5px;
+		background-color: #222;
+		color: #fff;
+		text-align: center;
+		font-size: 30px;
+		cursor: pointer;
+		width: 50px;
+		height: 50px;
+	}
+	/*escondendo o botão mobile*/
+	#bt_menu{
+		display: none;
+	}
+	label[for="bt_menu"]{
+		display: none;
+	}
+
+	@media(max-width: 800px){
+		/*fazendo o bot~~ao reaparecer*/
+		label[for="bt_menu"]{
+			display: block;
+		}
+		
+
+		/* efeito do botão*/
+		#bt_menu:checked ~ .menu{
+			margin-left: 0;
+		}
+		#bt_menu:checked ~ h1{
+			margin-top: 200px;
+		}
+
+		.menu{
+			margin-top: 5px;
+			margin-left: -100%;
+			transition: 1s;
+		}
+
+
+		/* formatando o menu para mobile*/
+		.menu ul li{
+			width: 100%;
+			float: none;
+		}
+		.menu ul ul{
+			position: static;
+			overflow: hidden;
+			min-height: 0;
+			transition:all 0.4s; 
+		}
+
+		.menu ul li:hover ul{
+			height: auto;
+			max-height: 200px;
+		}
+	}
+
+	</style>
+</head>
+<body>
+	<input type="checkbox" id="bt_menu">
+	<label for="bt_menu">&#9776;</label>
+
+	<nav class="menu">
+		<ul >
+		    <li><a href="#">Home</a></li>
+			<li><a href="#">Quem Somos</a></li>
+			<li><a href="#">Contribua</a>
+				<ul>
+					<li><a href="#">Contribua</a></li>
+					<li><a href="#">Depoimentos</a></li>
+					<li><a href="#">Contato</a></li> 
+				</ul>
+			</li>
+			<li><a href="#">Depoimentos</a></li>
+			<li><a href="#">Contato</a></li>               
+		</ul>
+	</nav>
+	<h1>meus testes</h1>
+</body>
+</html>

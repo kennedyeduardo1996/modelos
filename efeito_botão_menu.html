@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.menu{
+			width: 88px;
+			height: 88px;
+			margin: 100px auto;
+			position: relative;
+		}
+		.menu label{
+			width: 100%;
+			height: 100%;
+			background-color: #069;
+			position: absolute;
+			transition: all 0.3s linear;
+			cursor: pointer;
+		}
+		input{
+			position: absolute;
+			z-index: 1;
+		}
+		span{
+			width: 60px;
+			height: 8px;
+			top: 40px;
+			left: 14px;
+			position: absolute;
+			background-color: #fff;
+			transition: all 0.3s linear;
+		}
+		span:before{
+			content: '';
+			width: 60px;
+			height: 8px;
+			bottom: -20px;
+			position: absolute;
+			background-color: #fff;
+			transition: all 0.3s linear;
+		}
+		span:after{
+			content: '';
+			width: 60px;
+			height: 8px;
+			top: -20px;
+			position: absolute;
+			background-color: #fff;
+			transition: all 0.3s linear;
+		}
+		/*quando o elemento estiver ativo com cheched então o elemento irmão(span) fará...*/
+		#check:checked ~ span{
+			background-color: transparent;
+		}
+		#check:checked ~ span:before{
+			transform: translate(0px,-20px) rotate(-45deg);
+		}
+		#check:checked ~ span:after{
+			transform: translate(0px,20px) rotate(45deg);
+		}
+		#check:checked ~ label{
+			border-radius: 50%;
+			transition: all 0.3s linear;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<input type="checkbox" id="check">
+		<label for="check"></label>
+		<span></span>
+	</div>
+
+</body>
+</html>
