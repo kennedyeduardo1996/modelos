@@ -3,6 +3,9 @@
 	<title>topo fixo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<!--  https://www.convertico.com/  -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -20,38 +23,184 @@
 		div#menu {
 		    margin: 0 auto;
 		    float: left;
-		    width: 900px;
-		    height: 30px;
+		    width: 100%;
 		    background-color: #036;
 		    opacity: 0.5;
 		    position: fixed;
 		    top: 0;
 		}
 		div#conteudo{
-		 	float: left;
+			margin-top: 100px;
 		 	width: 900px;
 		 	height: 2000px;
 		 	background-color: #069;
+		}
+		div#conteudo figure{
+			position: relative;
+		}
+		div#conteudo img{
+			width: 100%;
+    		height: 186px;
+		}
+
+		div#conteudo figcaption{
+			color: #fff;
+		    width: 100%;
+		    text-align: center;
+		    position: absolute;
+		    top: 50%;
+		    transform: translate(0,-50%);
+			
 		}
 
 		.test{
 			background-color: red;
 			height: 300px;
-			transform: translate(0px,-20px) rotate(-45deg);
+			transform: matrix(1, -0.1, 0, 1, 0, 0);
 		}
+		.test > * {
+		    transform: matrix(1, 0.1, 0, 1, 0, 60);
+		}
+		#subir{
+			position: absolute;
+			color: #000;
+			font-size: 30px;
+			bottom: 0;
+		}
+		.voltar-ao-topo{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            text-decoration: none;
+            color: black;
+            background-color: rgba(0, 0, 0, 0.3);
+            font-size: 30px;
+
+            
+        }
+        .voltar-ao-topo:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
 
 	</style>
 </head>
 <body>
-	<div id="menu">
+	<div class="container-fluid">
+		<div id="menu">
+			<ul>
+				<li>aaaaa</li>
+				<li>bbbbbbb</li>
+				<li>cccccccc</li>
+				<li>ddddddddd</li>
+				<li>eeeeeeeeee</li>
+			</ul>
 		</div>
+	</div>	
+
 	<div id="centro">
 		
 		<div id="conteudo">
+			<figure>
+				<img src="test.jpg">
+				<figcaption><h1>legenda<br>central</h1></figcaption>
+			</figure>
+			
 		</div>
 		<div style="clear:both;"></div>
 	
 	</div>
-		<div class="container test" ></div>
+		<div class="container test" >
+			<p>IIIIIIIIIIIIIIIIIIIIlllllllllllllllllllllllllLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL</p>
+			<h1>asdmasdkmaskdmak</h1>
+			<div><p>asdsadasd</p></div>
+		</div>
+			<a href="#" class="voltar-ao-topo">Voltar ao topo</a>
+		<script type="text/javascript">
+			/*
+			$(document).ready(function() {
+            // Exibe ou oculta o botão
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    $('.voltar-ao-topo').fadeIn(200);
+                } else {
+                    $('.voltar-ao-topo').fadeOut(200);
+                }
+            });
+            
+            // Faz animação para subir
+            $('.voltar-ao-topo').click(function(event) {
+                event.preventDefault();
+                $('html, body').animate({scrollTop: 0}, 300);
+            })
+        });
+*/
+		</script>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+					<form name="formulario" action="#" method="post">
+						<div class="form_nome col-md-4">
+							<label for="nome" >Nome:</label>
+							<input name="nome" id="nome" type="text" >
+						</div>
+						<div class="form_apelido col-md-4" >
+							<label for="apelido" >Apelido</label>
+							<input name="apelido" id="apelido" type="text">
+						</div>
+						<div class="form_email col-md-4">
+							<label for="email" >E-mail</label>
+							<input name="email" id="email" type="email">
+						</div>
+						<div class="form_senha col-md-4">
+							<label for="senha" >Senha</label>
+							<input name="senha" id="senha" type="password">
+						</div>
+						<div class="form_rep_senha col-md-4">
+							<label for="rep_senha" >Repetir senha</label>
+							<input name="rep_senha" id="rep_senha" type="text">
+						</div>
+						<div class="form_texto col-md-4">
+							<label for="texto" >Repetir senha</label>
+							<textarea id="texto"></textarea>
+						</div>
+						<input type="submit" value="enviar" onclick='return validar();'>
+
+					</form>
+					</div>
+
+				</div>
+					<script type="text/javascript">
+						function validar(){
+							var nome = formulario.nome.value;
+							var apelido = formulario.apelido.value;
+							var email = formulario.email.value;
+							var senha = formulario.senha.value;
+							var rep_senha = formulario.rep_senha.value;
+
+						
+							if(nome.length == 0){
+								alert("campo não preenchido");
+								formulario.nome.focus();
+								return false;
+							};
+							if ((senha != rep_senha)||(senha == "")) {
+
+								if()
+								alert("senhas diferentes");
+								formulario.senha.focus();
+								return false;
+							}
+						}
+					</script>
+				<div class="col-md-6 col-sm-12" style="background-color:blue;">
+					outra medade azul
+				</div>
+
+			</div>
+		</div>
+
+		<script src="jquery.js"></script>
+		
 </body>
 </html>
