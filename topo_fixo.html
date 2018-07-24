@@ -29,6 +29,8 @@
 		    opacity: 0.5;
 		    position: fixed;
 		    top: 0;
+		    z-index: 1;
+
 		}
 		div#menu:hover {
 		    background-color: #fff;
@@ -43,6 +45,10 @@
 		}
 		div#menu li{
 			display: inline-block;
+		    padding: 5px;
+		    background-color: aqua;
+		    border-radius: 6px;
+		    cursor: pointer;
 		}
 
 
@@ -133,6 +139,29 @@
             background-color: rgba(0, 0, 0, 0.6);
         }
 
+        .botao_mobile{
+        	width: 20px;
+        	height: 20px;
+        	text-align: center;
+        	color: #fff;
+        	border-radius: 7px;
+        	background-color: #000;
+        	cursor: pointer;
+        	display: none;
+        }
+        @media (max-width: 767px){
+        	div#menu {
+        		display: none;
+        	}
+        	div#menu li{
+				display: block;
+			   	margin: 5px;
+			}
+			.botao_mobile{
+        		display: block;
+        	}
+        }
+
 	</style>
 
 
@@ -140,6 +169,15 @@
 </head>
 <body>
 	<div class="container-fluid">
+			<script type="text/javascript">
+		/* função para fazer o menu aparecer após o click */
+		$(document).ready(function( ){
+			$('.botao_mobile').click(function( ){
+				$('#menu').toggle();
+			});
+		});
+		</script>
+		<div class="botao_mobile">&#9776;</div>
 		<div id="menu">
 			<ul>
 				<li>aaaaa</li>
@@ -170,6 +208,25 @@
 		</div>
 			<a href="#" class="voltar-ao-topo">Voltar ao topo</a>
 		<script type="text/javascript">
+		/* função para fazer o menu aparecer após o click */
+	
+
+		/* função para mudar css ao rolar o mouse 
+
+			jQuery(function () {
+			  jQuery(window).scroll(function () {
+			    if (jQuery(this).scrollTop() > 400) {
+			     $("#menu").addClass("menu-diferente");
+			    } else {
+			     $("#menu").removeClass("menu-diferente");
+			    }
+			  });
+			});
+
+			*/
+
+
+
 			/*
 			$(document).ready(function() {
             // Exibe ou oculta o botão
