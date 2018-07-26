@@ -1,0 +1,116 @@
+ <html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script src="jquery-3.2.1.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		header{
+			background-color: rebeccapurple;
+			opacity: 0.6;
+			position: fixed;
+			width: 100%;
+		}
+		nav{
+			width: 80%;
+			margin: auto;
+		}
+		#menu{
+			float: right;
+		}
+		li{
+			display: inline-block;
+			padding: 10px;
+			color: #fd4;
+			background-color: #5a2;
+			border-radius: 10px;
+		}
+
+
+
+		@media(max-width: 767px){
+			#menu{
+				float: none;
+				text-align: center;
+				display: none;
+			}
+			li{
+				display: block;
+				margin: 1px;
+			}
+		
+
+		#btn_mobile{
+			width: 45px;
+			height: 45px;
+			background-color: #000;
+			position: relative;
+			border-radius: 50%;
+			cursor: pointer;
+		
+		}
+		#btn_mobile span{
+			position: absolute;
+		    background-color: #fff;
+		    width: 21px;
+		    height: 3px;
+		    margin: 21px 12px;
+		    cursor: pointer;
+		}
+		#btn_mobile span:before{
+			content: "";
+			position: absolute;
+		    background-color: #fff;
+		    width: 21px;
+		    height: 3px;
+		    top: -8px;
+		}
+		#btn_mobile span:after{
+			content: "";
+			position: absolute;
+		    background-color: #fff;
+		    width: 21px;
+		    height: 3px;
+		    bottom: -8px;
+		}
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<div id="btn_mobile">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div id="menu">
+				<ul>
+					<li><a>agua</a></li>
+					<li><a>cafe</a></li>
+					<li><a>feijão</a></li>
+					<li><a>bolo</a></li>
+					<li><a>laranja</a></li>
+				</ul>
+
+			</div>
+		</nav>
+	</header>
+	<div class="conteudo">
+
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn_mobile').click(function(){
+				$('#menu').css("display","block");
+			});
+		});
+	</script>
+
+</body>
+</html>

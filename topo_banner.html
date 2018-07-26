@@ -62,53 +62,9 @@
 		    background-repeat: no-repeat;
 		    background-position: 100px 100px;
 		}
-		#conteudo::before {
-	        content: "";
-		    position: absolute;
-		    width: 175px;
-		    height: 502px;
-		    background-image: url(mundo.png);
-		    background-size: 100%;
-		    background-repeat: no-repeat;
-		    background-position: 0px 13px;
-		}
-		#conteudo::after {
-	        content: "";
-		    position: absolute;
-		    width: 224px;
-		    height: 503px;
-		    top: 0;
-		    right: 0;
-		    background-image: url(coisa.jpg);
-		    background-size: 100%;
-		    background-repeat: no-repeat;
-		    background-position: 0px 0px; 
-		}
+	
 
-
-		div#conteudo figure{
-			position: relative;
-    
-    		overflow: hidden;
-		}
-		div#conteudo img{
-			height: 1080px;
-		    min-width: 1920px;
-		    width: 1920px;
-		    left: 50%;
-		    position: relative;
-		    transform: translateX(-50%);
-		}
-
-		div#conteudo figcaption{
-			color: #fff;
-		    width: 100%;
-		    text-align: center;
-		    position: absolute;
-		    top: 50%;
-		    transform: translate(0,-50%);
-			
-		}
+		
 
 		.test{
 			background-color: red;
@@ -185,13 +141,29 @@
 	</div>	
 
 	<div id="centro">
-		
+		<style type="text/css">
+		.conteudo{
+
+		}
+			.banner{
+				background: url("test.jpg");
+				background-repeat: no-repeat;
+				background-position: 50% 0;
+				width: auto;
+				height: 1080px;
+				background-size: 100%;
+				
+			}
+
+		</style>
 		<div id="conteudo">
-			<figure>
-				<img src="test.jpg">
-				<figcaption><h1>legenda<br>central</h1></figcaption>
-			</figure>	
+			<div class="banner">
+				<div class="legenda">legenda central</div>
+			</div>
 		</div>
+
+
+
 		<div style="clear:both;"></div>
 	
 	</div>
