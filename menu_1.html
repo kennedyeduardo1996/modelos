@@ -4,6 +4,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<script src="jquery-3.2.1.js"></script>
+	
+</head>
+<body>
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -14,6 +17,7 @@
 			opacity: 0.6;
 			position: fixed;
 			width: 100%;
+			z-index: 3;
 		}
 		nav{
 			width: 80%;
@@ -80,28 +84,114 @@
 		}
 
 	</style>
-</head>
-<body>
 	<header>
-		<nav>
-			<div id="btn_mobile">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<div id="menu">
-				<ul>
-					<li><a>agua</a></li>
-					<li><a>cafe</a></li>
-					<li><a>feijão</a></li>
-					<li><a>bolo</a></li>
-					<li><a>laranja</a></li>
-				</ul>
+		<div class="row">
+			<nav>
+				<div id="btn_mobile">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div id="menu">
+					<ul>
+						<li><a>agua</a></li>
+						<li><a>cafe</a></li>
+						<li><a>feijão</a></li>
+						<li><a>bolo</a></li>
+						<li><a>laranja</a></li>
+					</ul>
+
+				</div>
+			</nav>
+		</div>
+	</header>
+	<style type="text/css">
+		.container-fluid{
+			padding: 0;
+		}
+		.row {
+    		margin-right: 0px; 
+    		margin-left: 0px; 
+		}
+		.banner{
+			overflow: hidden;
+		}
+
+		.banner img{
+		    position: relative;
+			left: 50%;
+		    transform: translateX(-50%);
+		    filter: grayscale(100%);
+		}
+		.banner figure{
+			position: relative;
+		}
+		.banner figcaption{
+			width: 100%;
+		    position: absolute;
+		    text-align: center;
+		    top: 50%;
+		    color: red;
+		    transform: translateY(-50%);
+
+		}
+		
+	</style>
+
+	<div class="conteudo">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="banner">
+					<figure>
+					  <img src="test.jpg" alt="Torre Eiffel">
+					  <figcaption><h1>Miniatura da torre Eiffel <br>no Parque Mini-France</h1></figcaption>
+					</figure>
+				</div>
 
 			</div>
-		</nav>
-	</header>
-	<div class="conteudo">
+		</div>
+
+		<style type="text/css">
+			.fundo_roxo{
+				background-color: #A020F0;
+			    background-position: right 30px;
+			    background-image: url(num3.png);
+			    background-repeat: no-repeat;
+				
+			}
+			.fundo_roxo:before{
+				content: "";
+			    width: 215px;
+			    margin-top: 6%;
+			    /* right: 0; */
+			    height: 380px;
+			    background-image: url(num20.png);
+			    position: absolute;
+			    background-repeat: no-repeat;
+			}
+			.fundo_roxo h1{
+				text-align: center;
+			}
+		</style>
+		<div class="container-fluid">
+			<div class="fundo_roxo">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="icone_centro">
+								<h1>TEXTO CENTRO</h1>
+							</div>
+						</div>
+						<div class="col-sm-6"><div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lorem hendrerit, sollicitudin ipsum ac, finibus neque. Donec magna neque, sagittis a ex vel, sollicitudin vestibulum mi. Cras tincidunt neque quis sem aliquam, pellentesque suscipit lorem pharetra. Aenean semper erat quis massa efficitur tincidunt. Vivamus rhoncus sed metus eget vehicula. Vestibulum condimentum imperdiet mauris sed rutrum. Nulla et erat et nibh sodales feugiat. Morbi et dictum erat, eget rhoncus justo.</p></div></div>
+						<div class="col-sm-6"><div><p>Praesent elit mauris, pretium in lacus sit amet, euismod egestas sem. Morbi pharetra mollis ipsum, ut imperdiet purus placerat id. Aenean hendrerit, lorem sed rutrum lacinia, odio enim dictum lacus, sed lacinia lorem ligula quis sem. Praesent tristique elit pellentesque massa sollicitudin ultricies. Suspendisse iaculis libero id vehicula aliquam. Integer porttitor massa at turpis egestas, non molestie ante finibus. Nulla orci metus, sollicitudin nec lectus at, pretium tincidunt nisi. Fusce ut vestibulum eros. Aenean vulputate, tortor vitae suscipit rutrum, elit neque porttitor turpis, quis egestas orci nulla et quam. Nunc lobortis justo sed justo commodo viverra. In viverra laoreet enim in condimentum. Suspendisse id feugiat orci. Vestibulum vulputate aliquam iaculis.</p></div></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
 
 	</div>
 	<script type="text/javascript">
