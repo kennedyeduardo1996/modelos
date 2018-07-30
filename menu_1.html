@@ -2,8 +2,9 @@
 <head>
 	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"> 
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
 	
 </head>
 <body>
@@ -163,6 +164,7 @@
 			.fundo_roxo:before{
 				content: "";
 			    width: 215px;
+			    background-size: 100%;
 			    margin-top: 6%;
 			    /* right: 0; */
 			    height: 380px;
@@ -210,12 +212,130 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
 	</div>
+
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//validação do formulario
+			$('#form_contato').validate({
+				//regras
+				rules:{
+					//name do input
+					nome:{
+						required:true,
+						minlength:5
+					},
+					email:{
+						required:true,
+						email:true
+					},
+					senha:{
+						required:true,
+						rangelength:[4,10]
+					},
+					rep_senha:{
+						required:true,
+						equalTo: "#senha"
+					},
+					texto:{
+						required:true
+					},
+					aceito:{
+						required:true
+					}
+				},
+				//mensagens
+				messages:{
+					nome:{
+						required: "Campo obrigatório",
+						minlength: "no minimo 5 caracteres"
+					},
+					email:{
+						required: "Campo obrigatório",
+						email:"informe email valido"
+					},
+					senha:{
+						required: "Campo obrigatório",
+						rangelength:"quantidade minima 4 caracteres"
+					},
+					rep_senha:{
+						required: "Campo obrigatório"
+					},
+					texto:{
+						required: "Campo obrigatório"
+					},
+					aceito:{
+						required: "Você deve aceitar os termos"
+					}
+				}
+			});
+		});
+	</script>
+	<div class="fim_pagina">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+					<form name="formulario" id="form_contato" action="#" method="post">
+						<div class="form_nome col-sm-4">
+							<label for="nome" >Nome:</label>
+							<input name="nome" id="nome" type="text" >
+						</div>
+						<div class="form_apelido col-sm-4" >
+							<label for="apelido" >Apelido</label>
+							<input name="apelido" id="apelido" type="text">
+						</div>
+						<div class="form_email col-sm-4">
+							<label for="email" >E-mail</label>
+							<input name="email" id="email" type="email">
+						</div>
+						<div class="clear"></div>
+						<div class="form_senha col-sm-4">
+							<label for="senha" >Senha</label>
+							<input name="senha" id="senha" type="password">
+						</div>
+						<div class="form_rep_senha col-sm-4">
+							<label for="rep_senha" >Repetir senha</label>
+							<input name="rep_senha" id="rep_senha" type="text">
+						</div>
+						<div class="form_texto col-sm-4">
+							<label for="texto" >Mensagem</label>
+							<textarea id="texto" name="texto"></textarea>
+						</div>
+						<div class="form_aceito col-sm-6">
+							<input name="aceito" id="aceito" type="checkbox">
+							<label for="aceito" >Aceito os termos e condições</label>
+							
+						</div>
+						<div class="enviar col-sm-6">	
+							<input type="submit" value="enviar" >
+						</div>
+
+
+					</form>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
 	<style type="text/css">
+	.col-sm-4:after{
+		content: '';
+		clear: both;
+	}
 		footer{
 			background-color: #f2f1f1;
 			font-family: 'Swiss721BT-Roman';
@@ -262,15 +382,63 @@
 				<div class="col-md-12 desenvolvido">
 					<a target="blank" href="http://www.innovarecompany.com.br">Desenvolvido por <img src="img/innovare.png"></a>
 				</div>
+				<style type="text/css">
+					#up_top{
+						background: red;
+					    position: fixed;
+					    padding: 10px;
+					    border-radius: 50%;
+					    cursor: pointer;
+					    right: 5%;
+					    bottom: 3%;
+					  	display: none;
+					}
+
+				</style>
+				<div id="up_top">voltar ao topo</div>
 			</div>
 		</div>
 	</footer>
-	<script src="jquery-3.2.1.js"></script>
+	
 	<script type="text/javascript">
-		$(function(){
-			$('#btn_mobile').click(function(){
-				$('#menu').show();
+		$(document).ready(function(){
+			/*
+			$('#up_top').scrollTop(position,1000).css("display", "none");
+
+
+			$(window).resize(function(){
+                	var largura = $(window).width();
+				$('.fundo_roxo').before().css("width", largura);		
+            });
+ */
+
+
+
+
+ 			//desaparecer botão subir para o topo
+			$(window).scroll(function(){
+				positionAltura = $( window ).scrollTop();
+				if(positionAltura >= 1000){
+				     $('#up_top').css( "display", "block");
+				}else{
+				     $('#up_top').css( "display", "none");
+				} 
 			});
+
+			//botao subir para o topo
+
+            $('#up_top').on('click',function(){
+            	$('html, body').animate({scrollTop:0}, 'slow'); 
+            });
+			
+            // botão menu mobile aparecer e sumir
+			$('#btn_mobile').click(function(){
+				$('#menu').slideToggle(400);
+			});
+
+			
+			
+
 		});
 	</script>
 	
