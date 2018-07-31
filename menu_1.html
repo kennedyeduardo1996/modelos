@@ -19,6 +19,10 @@
 			margin: 0;
 			padding: 0;
 		}
+		.minhaheader{
+			background-color: #f03;
+			position: fixed;
+		}
 		header{
 			background-color: rebeccapurple;
 			opacity: 0.6;
@@ -335,7 +339,10 @@
 				</div>
 
 				<div class="col-md-6 col-md-offset-0">
-					<div style="background-color:red; height:500px"></div>
+					<div style="background-color:red; height:500px">
+
+
+					</div>
 				</div>
 			</div>
 
@@ -376,6 +383,13 @@
 			color: #a1a1a1;
 			text-decoration: none;
 		}
+		.face{
+			
+		}
+		.face:hover{
+			transform: rotateY(360deg);
+			transition: all 0.8s;
+		}
 	</style>
 
 
@@ -401,6 +415,7 @@
 				<div class="col-md-12 desenvolvido">
 					<a target="blank" href="http://www.innovarecompany.com.br">Desenvolvido por <img src="innovare.png"></a>
 				</div>
+				<img class="face" src="face.png">
 				<style type="text/css">
 					#up_top{
 						background: red;
@@ -464,18 +479,21 @@
 				positionAltura = $( window ).scrollTop();
 
             	if(positionAltura > 50){
-            		$('header').css({
+            		$('header').addClass("minhaheader");
+            		/*$('header').css({
             			"background-color": "#8da",
             			"color":"red",
             			"position":"fixed",
             			"transition":"all 0.3s"
-            		});
+            		});*/
             	}else{
-            		$('header').css({
+            		$('header').removeClass("minhaheader");
+            		/*$('header').css({
             			"background-color": "rebeccapurple",
             			"position":"absolute",
             			"transition":"all 0.3s"
             		});
+ */
             	}
             });
 
