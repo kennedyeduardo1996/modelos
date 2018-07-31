@@ -4,7 +4,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"> 
 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
+	<script type="text/javascript" src="messages_pt_BR.min.js"></script>
+
+
+
+	
 	
 </head>
 <body>
@@ -16,7 +22,7 @@
 		header{
 			background-color: rebeccapurple;
 			opacity: 0.6;
-			position: fixed;
+			position: absolute;
 			width: 100%;
 			z-index: 3;
 		}
@@ -219,69 +225,78 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			//validação do formulario
-			$('#form_contato').validate({
-				//regras
-				rules:{
-					//name do input
-					nome:{
-						required:true,
-						minlength:5
+			$('#btn_enviar').on("click", function(){
+
+				$('#form_contato').validate({
+					//regras
+					rules:{
+						//name do input
+						nome:{
+							required:true,
+							minlength:5
+						},
+						email:{
+							required:true,
+							email:true
+						},
+						senha:{
+							required:true,
+							rangelength:[4,10]
+						},
+						rep_senha:{
+							required:true,
+							equalTo: "#senha"
+						},
+						texto:{
+							required:true
+						},
+						aceito:{
+							required:true
+						}
 					},
-					email:{
-						required:true,
-						email:true
-					},
-					senha:{
-						required:true,
-						rangelength:[4,10]
-					},
-					rep_senha:{
-						required:true,
-						equalTo: "#senha"
-					},
-					texto:{
-						required:true
-					},
-					aceito:{
-						required:true
+					//mensagens
+					messages:{
+						nome:{
+							required: "Campo obrigatório",
+							minlength: "no minimo 5 caracteres"
+						},
+						email:{
+							required: "Campo obrigatório",
+							email:"informe email valido"
+						},
+						senha:{
+							required: "Campo obrigatório",
+							rangelength:"quantidade minima 4 caracteres"
+						},
+						rep_senha:{
+							required: "Campo obrigatório"
+						}
+						
+						
 					}
-				},
-				//mensagens
-				messages:{
-					nome:{
-						required: "Campo obrigatório",
-						minlength: "no minimo 5 caracteres"
-					},
-					email:{
-						required: "Campo obrigatório",
-						email:"informe email valido"
-					},
-					senha:{
-						required: "Campo obrigatório",
-						rangelength:"quantidade minima 4 caracteres"
-					},
-					rep_senha:{
-						required: "Campo obrigatório"
-					},
-					texto:{
-						required: "Campo obrigatório"
-					},
-					aceito:{
-						required: "Você deve aceitar os termos"
-					}
-				}
+				});
+				
 			});
+
 		});
 	</script>
+	<style type="text/css">
+		    #form_contato{
+		    	margin-top: 10%;
+		    }
+		    .col-md-offset-1{
+		    	border: 1px solid #000;
+		    }
+	</style>
 	<div class="fim_pagina">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-4 col-md-offset-1">
 					<div class="row">
 					<form name="formulario" id="form_contato" action="#" method="post">
 						<div class="form_nome col-sm-4">
 							<label for="nome" >Nome:</label>
-							<input name="nome" id="nome" type="text" >
+							<input name="nome" id="nome" type="text" > <br>
 						</div>
 						<div class="form_apelido col-sm-4" >
 							<label for="apelido" >Apelido</label>
@@ -310,7 +325,7 @@
 							
 						</div>
 						<div class="enviar col-sm-6">	
-							<input type="submit" value="enviar" >
+							<input type="submit" id="btn_enviar" value="enviar" >
 						</div>
 
 
@@ -319,10 +334,14 @@
 
 				</div>
 
-				<div class="col-md-6">
-
+				<div class="col-md-6 col-md-offset-0">
+					<div style="background-color:red; height:500px"></div>
 				</div>
 			</div>
+
+
+
+		
 
 		</div>
 	</div>
@@ -380,7 +399,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 desenvolvido">
-					<a target="blank" href="http://www.innovarecompany.com.br">Desenvolvido por <img src="img/innovare.png"></a>
+					<a target="blank" href="http://www.innovarecompany.com.br">Desenvolvido por <img src="innovare.png"></a>
 				</div>
 				<style type="text/css">
 					#up_top{
@@ -391,11 +410,17 @@
 					    cursor: pointer;
 					    right: 5%;
 					    bottom: 3%;
-					  	display: none;
+					  	
+					}
+					#up_top:before{
+						content: " ";
+						width: 30px;
+						height: 2px;
+						background-color: #fff;
 					}
 
 				</style>
-				<div id="up_top">voltar ao topo</div>
+				<div id="up_top"></div>
 			</div>
 		</div>
 	</footer>
@@ -416,6 +441,7 @@
 
 
  			//desaparecer botão subir para o topo
+ 			
 			$(window).scroll(function(){
 				positionAltura = $( window ).scrollTop();
 				if(positionAltura >= 1000){
@@ -426,14 +452,50 @@
 			});
 
 			//botao subir para o topo
-
             $('#up_top').on('click',function(){
             	$('html, body').animate({scrollTop:0}, 'slow'); 
             });
+
+
+
+
+            // menu de rolagem
+            $(window).scroll(function(){
+				positionAltura = $( window ).scrollTop();
+
+            	if(positionAltura > 50){
+            		$('header').css({
+            			"background-color": "#8da",
+            			"color":"red",
+            			"position":"fixed",
+            			"transition":"all 0.3s"
+            		});
+            	}else{
+            		$('header').css({
+            			"background-color": "rebeccapurple",
+            			"position":"absolute",
+            			"transition":"all 0.3s"
+            		});
+            	}
+            });
+
+
+
+
+
+
 			
             // botão menu mobile aparecer e sumir
 			$('#btn_mobile').click(function(){
 				$('#menu').slideToggle(400);
+			});
+			$(window).resize(function() {
+				var tamanho = $(window).width();
+				if (tamanho > 767) {
+				$("#menu").css("display","block");
+				} else {
+				$("#menu").css("display","none");
+				}
 			});
 
 			
