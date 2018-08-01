@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;	
+		}
+		body{
+			height: 100%;
+		}
+		.num1{
+			width: 100%;
+			min-height: 100%;
+			background-color: red;
+			position: relative;
+		}
+		.num1:after{
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			transform: matrix(1, -0.03, 0, 1, 0, 0);
+			transform-origin:right bottom;
+			width: 100%;
+			height: 75px;
+			background-color: green;
+			border: 1px solid black;
+		}
+		.num2{
+			width: 100%;
+			border: 5px solid #fff;
+			background-color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+
+
+			$(window).resize(function(){
+				var alturajanela = $(window).height();
+				console.log(alturajanela);	
+			});
+			
+		});
+	</script>
+	<div class="num1"><h1>sdnnaoofnas <br> mddoammdsa</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in semper est. Curabitur convallis, massa eu dignissim dignissim, lorem lectus fringilla leo, id tincidunt orci arcu non magna. Phasellus at massa neque. Praesent efficitur nulla maximus, tristique mi eu, sodales nibh. Donec scelerisque quam id efficitur tincidunt. Nam blandit leo nec mi vehicula semper. Nullam et tortor elit. Nunc mattis venenatis iaculis. Nam lobortis pharetra nibh sit amet pretium.
+		<br>
+		Nulla non porttitor ipsum. Nulla ac varius tortor, sed elementum dui. Proin accumsan molestie justo. Phasellus tristique, dolor id congue dapibus, neque nisl sodales dui, ac egestas dui libero ut enim. Nam eget hendrerit libero, quis tempus arcu. Duis placerat dictum nibh vestibulum rutrum. Morbi sed nunc in lacus vestibulum dictum. In finibus nec elit sed cursus.
+		<br>
+		Nunc vestibulum orci congue urna lacinia, ac maximus justo mattis. Praesent neque quam, suscipit a porta non, iaculis non ipsum. Praesent pellentesque nibh ipsum, vel semper dolor faucibus ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis quam sed nunc pellentesque finibus non vitae tortor. Vestibulum auctor fringilla ex, a congue urna tincidunt sed. Pellentesque tellus ligula, rhoncus non ipsum nec, blandit vehicula felis. Nullam luctus justo eu magna efficitur commodo. Pellentesque placerat leo sed pellentesque pellentesque. Quisque et vulputate magna. Nunc at laoreet urna. Nunc scelerisque felis nulla, id molestie leo blandit non. Morbi finibus ornare purus ut luctus. Curabitur pellentesque congue velit, placerat lacinia eros dictum eu.</p>
+	</div>
+	<div class="num2"><h2>dspocdomcwocmocm</h2>
+		<p>Nunc vestibulum orci congue urna lacinia, ac maximus justo mattis. Praesent neque quam, suscipit a porta non, iaculis non ipsum. Praesent pellentesque nibh ipsum, vel semper dolor faucibus ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis quam sed nunc pellentesque finibus non vitae tortor. Vestibulum auctor fringilla ex, a congue urna tinc.</p>
+	</div>
+</body>
+</html>

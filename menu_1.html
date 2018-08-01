@@ -5,19 +5,17 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"> 
 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="jquery.validate.min.js"></script>
-	<script type="text/javascript" src="jquery.validate.min.js"></script>
-	<script type="text/javascript" src="messages_pt_BR.min.js"></script>
 
 
-
-	
-	
 </head>
 <body>
 	<style type="text/css">
 		*{
 			margin: 0;
 			padding: 0;
+		}
+		body{
+			height: 100%;
 		}
 		.minhaheader{
 			background-color: #f03;
@@ -182,6 +180,14 @@
 			    position: absolute;
 			    background-repeat: no-repeat;
 			}
+			.fundo_roxo:after{
+				background-color: #fff;
+				width: 100%;
+				border:1px solid red;
+				height: 50px;
+				position: absolute;
+
+			}
 			.fundo_roxo h1{
 				text-align: center;
 			}
@@ -205,12 +211,13 @@
 		<style type="text/css">
 			.fundo_verde{
 				background-color: green;
-				transform: matrix(1, -0.1, 0, 1, 0, 0);
-				transform-origin: bottom left;
+			
+			
+				height: 100%;
 
 			}
 			.fundo_verde > *{
-				transform: matrix(1, 0.1, 0, 1, 0, 60);
+			
 			}
 		</style>
 		<div class="container-fluid">
@@ -476,9 +483,10 @@
 
             // menu de rolagem
             $(window).scroll(function(){
-				positionAltura = $( window ).scrollTop();
+				var positionAltura = $( window ).scrollTop();
+				var banner = $('.banner').height();
 
-            	if(positionAltura > 50){
+            	if(positionAltura > banner){
             		$('header').addClass("minhaheader");
             		/*$('header').css({
             			"background-color": "#8da",

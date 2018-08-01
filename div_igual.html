@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		tamanhoIgual();
+		function tamanhoIgual(){
+			var altura1 = $('.num1').height();
+			var altura2 = $('.num2').height();
+			if (altura1 > altura2) {
+				$('.num2').css("height", altura1);
+			}else{
+				$('.num1').css("height", altura2);
+			};
+		}
+
+	});
+</script>
+<style type="text/css">
+	.num1{
+		width: 50%;
+		background-color: red;
+		float: left;
+	}
+	.num2{
+		width: 50%;
+		float: right;
+		background-color: green;
+	}
+</style>
+<body>
+	<div class="num1"><h1>sdnnaoofnas <br> mddoammdsa</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in semper est. Curabitur convallis, massa eu dignissim dignissim, lorem lectus fringilla leo, id tincidunt orci arcu non magna. Phasellus at massa neque. Praesent efficitur nulla maximus, tristique mi eu, sodales nibh. Donec scelerisque quam id efficitur tincidunt. Nam blandit leo nec mi vehicula semper. Nullam et tortor elit. Nunc mattis venenatis iaculis. Nam lobortis pharetra nibh sit amet pretium.
+		<br>
+		Nulla non porttitor ipsum. Nulla ac varius tortor, sed elementum dui. Proin accumsan molestie justo. Phasellus tristique, dolor id congue dapibus, neque nisl sodales dui, ac egestas dui libero ut enim. Nam eget hendrerit libero, quis tempus arcu. Duis placerat dictum nibh vestibulum rutrum. Morbi sed nunc in lacus vestibulum dictum. In finibus nec elit sed cursus.
+		<br>
+		Nunc vestibulum orci congue urna lacinia, ac maximus justo mattis. Praesent neque quam, suscipit a porta non, iaculis non ipsum. Praesent pellentesque nibh ipsum, vel semper dolor faucibus ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis quam sed nunc pellentesque finibus non vitae tortor. Vestibulum auctor fringilla ex, a congue urna tincidunt sed. Pellentesque tellus ligula, rhoncus non ipsum nec, blandit vehicula felis. Nullam luctus justo eu magna efficitur commodo. Pellentesque placerat leo sed pellentesque pellentesque. Quisque et vulputate magna. Nunc at laoreet urna. Nunc scelerisque felis nulla, id molestie leo blandit non. Morbi finibus ornare purus ut luctus. Curabitur pellentesque congue velit, placerat lacinia eros dictum eu.</p>
+	</div>
+	<div class="num2"><h2>dspocdomcwocmocm</h2>
+		<p>Nunc vestibulum orci congue urna lacinia, ac maximus justo mattis. Praesent neque quam, suscipit a porta non, iaculis non ipsum. Praesent pellentesque nibh ipsum, vel semper dolor faucibus ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis quam sed nunc pellentesque finibus non vitae tortor. Vestibulum auctor fringilla ex, a congue urna tinc.</p>
+	</div>
+</body>
+</html>
