@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <title>Bemkifaz Project</title>
+    <meta charset="utf-8">
+    <style type="text/css" rel="stylesheet">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: #0cadee;
+        }
+        .btn-menu{
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+        }
+        .btn-menu span{
+            display: block;
+            background-color: black;
+            height: 2px;
+            width: 30px;
+            position: relative;
+            top: 30px;
+            left: 15px;
+        }
+        .btn-menu span:before, .btn-menu span:after{
+            background-color: black;
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .btn-menu span:before{
+            top: -10px;
+        }
+        .btn-menu span:after{
+            top: 10px;
+        }
+
+    </style>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+    <div class="btn-menu">
+        <span></span>
+    </div>
+</body>
